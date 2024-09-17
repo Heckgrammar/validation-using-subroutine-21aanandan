@@ -9,8 +9,16 @@
 
             // get the user inputs until all are valid.
             // The username should only be output once
+            
             Console.Write("Enter first name: ");
             firstName = Console.ReadLine();
+            ValidName(firstName);
+            if (ValidName == false)
+            {
+               Console.WriteLine("Please enter a 2 character and only letter name");
+               firstName = Console.ReadLine();
+               ValidName(firstName);
+            }
             Console.Write("Enter last name: ");
             lastName = Console.ReadLine();
             Console.Write("Enter age: ");
@@ -31,7 +39,10 @@
         static bool ValidName(string name)
         {
             // name must be at least two characters and contain only letters
+            int numOfChars = 0;
+            numOfChars = name.Length;
         }
+
 
         static bool validAge(int age)
         {
