@@ -75,9 +75,16 @@
             // name must be at least two characters and contain only letters
             int numOfChars = 0;
             numOfChars = name.Length;
-            int num1;
-            bool valid = int.TryParse(name, out num1);
-            if (numOfChars < 2 || valid == true ) 
+            for (int i = 0; i < name.Length; i++)
+            {
+                char individualchar = name[i];
+               if (char.IsDigit(individualchar))
+                {
+                    return false;
+                }
+
+            }
+            if (numOfChars < 2 ) 
 
             {
                 return false;
